@@ -113,8 +113,7 @@ public class PostsApiControllerTest {
         //when
         mvc.perform(put(url)
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
-                .content(new ObjectMapper().writeValueAsS
-                        tring(requestDto)))
+                .content(new ObjectMapper().writeValueAsString(requestDto)))
                 .andExpect(status().isOk());
         //then
         List<Posts> all = postsRepository.findAll();
